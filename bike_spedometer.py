@@ -161,7 +161,7 @@ while True:
         
         Tinitial = Tnew # Resetting Tinitial to now, to be compared at next trigger
         
-        distance = int(distance + diameter) # Incrementing the distance
+        distance = int(distance + diameter) # Incrementing the distance in inches
         
         while hall_sensor_pin.value() == 0:
             pass # Creating a latch so that the varaibles are not changed while the sensor is triggered

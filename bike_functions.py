@@ -60,6 +60,9 @@ def RunningScreen(distance):
         lcd.putstr(" in")
         
     
+    
+# All of the functions that have a "test" in their name are ran when the test mode is active
+# This mode allows for more data to be displayed on the screen, creating an easier environment for troubleshooting
 def TestScreen():
     # Displaying a test screen with more data
     lcd.clear()
@@ -82,6 +85,8 @@ def TestScreen():
 
 def RunningUpdate(distance, periodMS, SpeedDelay, diameter):
     # A function that updates the values on the running screen
+    distance = distance/63360 # Converting inches to miles
+    
     lcd.move_to(10, 0)  
     lcd.putstr(str(distance))
     
@@ -115,13 +120,13 @@ def RunningUpdate(distance, periodMS, SpeedDelay, diameter):
     
     if (distance < 10):
         lcd.move_to(12, 0)  
-        lcd.putstr("in")
+        lcd.putstr("mi")
     elif (distance < 100 and distance > 9):
         lcd.move_to(12, 0)  
-        lcd.putstr(" in")
+        lcd.putstr(" mi")
     elif (distance < 1000 and distance > 99):
         lcd.move_to(13, 0)  
-        lcd.putstr(" in")
+        lcd.putstr(" mi")
         
 
 
